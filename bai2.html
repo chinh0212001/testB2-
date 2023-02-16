@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>b2</title>
+</head>
+<body>
+
+<h2>Nhập vào 2 chuỗi:</h2>
+
+<label for="input1">Chuỗi 1:</label>
+<input type="text" id="input1" name="input1"><br> <br>
+
+<label for="input2">Chuỗi 2:</label>
+<input type="text" id="input2" name="input2"><br>
+
+<button onclick="countOccurrence()">Đếm</button>
+
+<script>
+    function countOccurrence() {
+        var input1 = document.getElementById("input1").value;
+        var input2 = document.getElementById("input2").value;
+        var count = 0;
+        var index = input1.indexOf(input2);
+
+        while (index !== -1) {
+            count++;
+            index = input1.indexOf(input2, index + 1);
+        }
+
+        alert("Chuỗi " + input2 + " xuất hiện " + count + " lần trong chuỗi " + input1);
+    }
+</script>
+
+</body>
+</html>
